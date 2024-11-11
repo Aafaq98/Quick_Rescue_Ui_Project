@@ -13,7 +13,7 @@
             <div >{{item.emailDomain}}</div>
             <div>
                 <button pButton label="Delete"  class="btn btn-danger btn-spacing" [disabled]="item.name === 'QuickRescue'" (click)="handleDelete(item.id); $event.stopPropagation()"></button>
-                <button pButton label="Edit" class="btn btn-success " (click)="handleEdit(item); $event.stopPropagation()"></button>
+                <button pButton label="Edit" class="btn btn-success modifyColor" (click)="handleEdit(item); $event.stopPropagation()"></button>
             </div>
         </div>
 
@@ -21,10 +21,10 @@
     }
 </div>
 
-<p-dialog header="Header" [(visible)]="accountDialog" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" (onHide)="accountDialog = false; id = -1; form.reset()">
+<p-dialog header="Add Account" [(visible)]="accountDialog" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" (onHide)="accountDialog = false; id = -1; form.reset()">
     @if(form && accountDialog) {
         <form [formGroup]="form" (ngSubmit)="handleSubmit(form)">
-          <!-- Username Field -->
+
           <div class="form-group">
             <label for="name">name</label>
             <input

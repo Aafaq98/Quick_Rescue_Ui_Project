@@ -13,7 +13,7 @@
                 <th>Name</th>
                 <th>City</th>
                 <th>phoneNumber</th>
-                <th><button pButton label="add" (click)="handleAddContact()"></button></th>
+                <th><button pButton class="btn btn-primary" label="add" (click)="handleAddContact()"></button></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-i>
@@ -22,8 +22,8 @@
                 <td>{{ i?.address?.city }}</td>
                 <td>{{ i?.phoneNumber }}</td>
                 <td>
-                    <button pButton type="button" label="edit" (click)="handleEditContact(i)"></button>
-                    <button pButton type="button" label="delete" (click)="handleDelete(i.id)"></button>
+                    <button pButton type="button" class="btn btn-success" label="edit" (click)="handleEditContact(i)"></button>
+                    <button pButton type="button" class="btn btn-danger" label="delete" (click)="handleDelete(i.id)"></button>
                 </td>
             </tr>
         </ng-template>
@@ -66,7 +66,7 @@
 </div>
 </div>
 
-<p-dialog header="Header" [(visible)]="contactDialog" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" (onHide)="contactDialog = false; contactId = -1; form.reset()">
+<p-dialog header="Contact Form" [(visible)]="contactDialog" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" (onHide)="contactDialog = false; contactId = -1; form.reset()">
     @if(form && contactDialog) {
         <form [formGroup]="form" (ngSubmit)="handleSubmit(form)">
           <!-- Username Field -->
@@ -171,7 +171,7 @@
 
 </p-dialog>
 
-<p-dialog header="Header" [(visible)]="alertDialog" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" (onHide)="alertDialog = false; alertId = -1; alertForm.reset()">
+<p-dialog header="Alert Profile Form" [(visible)]="alertDialog" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" (onHide)="alertDialog = false; alertId = -1; alertForm.reset()">
   @if(alertForm && alertDialog) {
     <form [formGroup]="alertForm" (ngSubmit)="handleSubmitAlert(alertForm)">
       <!-- Username Field -->
