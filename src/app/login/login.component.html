@@ -1,0 +1,35 @@
+
+<div class="login-container container ">
+
+  @if(form) {
+  <form class="container custom-form" [formGroup]="form" (ngSubmit)="login()">
+
+    <h2 class="h1">Login</h2>
+    <p>Please login to your account</p>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        class="form-control"
+        formControlName="username"
+      />
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        class="form-control"
+        formControlName="password"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary" [disabled]="!form.valid">
+      Login
+    </button>
+  </form>
+  }
+</div>
